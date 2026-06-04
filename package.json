@@ -1,6 +1,6 @@
 {
   "name": "@workith/gnb",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Workith 그룹웨어 공통 앱 전환 내비게이션 (super-GNB)",
   "type": "module",
   "main": "./dist/index.js",
@@ -16,6 +16,7 @@
   "sideEffects": ["./dist/style.css"],
   "scripts": {
     "build": "tsup && tailwindcss -c tailwind.config.ts -i src/styles.css -o dist/style.css --minify",
+    "prepare": "pnpm build",
     "dev": "vite serve demo",
     "test": "vitest run",
     "test:watch": "vitest",

@@ -7,6 +7,18 @@ Workith super-GNB 좌측 앱 전환 레일 컴포넌트 패키지.
 
 ---
 
+## 설치
+
+```bash
+# 원격 git 태그 설치 (권장 — prepare 스크립트가 설치 시 자동 빌드)
+pnpm add git+ssh://git@github.com/yegadev/workith-gnb.git#v0.1.1
+
+# 같은 머신에 clone 되어 있는 경우 로컬 경로 설치도 가능 (개발용)
+pnpm add file:../../workith-gnb
+```
+
+---
+
 ## 사용법
 
 ```tsx
@@ -66,15 +78,13 @@ pnpm install --force   # 또는 node_modules/@workith/gnb 삭제 후 pnpm instal
 
 `.gitignore` 에 의해 `dist/` 는 저장소에 포함되지 않는다.
 
-저장소를 새로 clone 한 뒤 `pnpm install` 만 실행하면 `dist/` 가 없어
-호스트 `file:` 설치가 빈 패키지를 참조하게 된다.
+- **원격 git 태그 설치**: `package.json` 의 `"prepare": "pnpm build"` 가 설치 시 자동으로
+  빌드를 실행하므로 별도 조치가 필요 없다.
+- **로컬 `file:` 설치 / 직접 개발**: clone 직후에는 `dist/` 가 없으므로 반드시 빌드를 선행한다.
+  (`pnpm install` 이 prepare 훅으로 빌드를 자동 실행하지만, 실패 시 수동으로 `pnpm build`)
 
 ```bash
 # fresh clone 후 필수 순서
-pnpm install
-pnpm build
+pnpm install   # prepare 훅이 pnpm build 를 자동 실행
+pnpm build     # (prepare 가 실패했을 때만 수동 실행)
 ```
-
-원격 git 태그(`git+https://...#v0.1.0`)로 배포 방식을 전환할 경우,
-`package.json` 에 `"prepare": "pnpm build"` 스크립트를 추가해야
-git 설치 시 자동으로 빌드가 실행된다.
