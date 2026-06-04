@@ -1,1 +1,8 @@
-/* Task 8 에서 Tailwind 엔트리(@tailwind base/components/utilities)로 교체된다 */
+/*
+ * @workith/gnb 스타일 엔트리.
+ * preflight(전역 reset)는 tailwind.config.ts 에서 비활성화 —
+ * base 레이어는 유틸리티가 의존하는 --tw-* 변수 기본값만 제공한다.
+ */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
