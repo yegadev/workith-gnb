@@ -14,7 +14,7 @@ import {
  * 아이콘을 컴포넌트가 아닌 문자열 키로 받는 이유: 2단계에서 공통 API 가
  * 앱 목록을 JSON 으로 내려줄 때 직렬화 가능해야 하기 때문.
  */
-const ICON_MAP: Record<string, LucideIcon> = {
+const ICON_MAP: Readonly<Record<string, LucideIcon | undefined>> = {
   groupware: Settings, // 그룹웨어 공통 (설정/사용자/권한)
   editor: FileText, // CRDT 에디터
   mail: Mail, // 메일
