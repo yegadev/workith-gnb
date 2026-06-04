@@ -1,0 +1,30 @@
+[
+  {
+    "id": "groupware",
+    "name": "그룹웨어",
+    "url": "https://groupware.workith.com",
+    "icon": "groupware",
+    "order": 1
+  },
+  {
+    "id": "editor",
+    "name": "에디터",
+    "url": "https://editor.workith.com",
+    "icon": "editor",
+    "order": 2
+  },
+  {
+    "id": "mail",
+    "name": "메일",
+    "url": "https://api.mail.workith.com",
+    "icon": "mail",
+    "order": 3
+  },
+  {
+    "id": "files",
+    "name": "파일",
+    "url": "https://files.workith.com",
+    "icon": "files",
+    "order": 4
+  }
+]
