@@ -26,7 +26,9 @@ export default function AppIcon({ app, active, expanded }: AppIconProps) {
         if (active) e.preventDefault()
       }}
       className={`wgnb-group wgnb-relative wgnb-flex wgnb-items-center wgnb-gap-2.5 wgnb-rounded-[10px] wgnb-p-2 wgnb-text-slate-200 wgnb-no-underline wgnb-transition-colors hover:wgnb-bg-slate-700 ${
-        active ? 'wgnb-bg-slate-700 wgnb-text-white' : 'wgnb-opacity-60 hover:wgnb-opacity-100'
+        active
+          ? 'wgnb-cursor-default wgnb-bg-slate-700 wgnb-text-white'
+          : 'wgnb-opacity-60 hover:wgnb-opacity-100'
       }`}
     >
       {/* 활성 앱 좌측 인디케이터 바 */}
