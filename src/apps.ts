@@ -32,7 +32,8 @@ export class StaticAppsSource implements AppsSource {
   }
 
   getApps(): Promise<GnbApp[]> {
-    return Promise.resolve(this.apps)
+    // 내부 배열 참조 공유로 인한 외부 변형(정렬 등) 전파를 차단 — 호출자마다 복사본 반환
+    return Promise.resolve([...this.apps])
   }
 }
 
