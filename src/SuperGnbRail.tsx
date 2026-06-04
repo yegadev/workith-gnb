@@ -17,7 +17,11 @@ function readExpanded(): boolean {
 interface SuperGnbRailProps {
   /** 현재 앱 id — 해당 앱을 강조 표시하고 클릭을 무시한다 */
   currentAppId: string
-  /** 앱 목록 공급자 — 생략 시 mock JSON 기반 StaticAppsSource */
+  /**
+   * 앱 목록 공급자 — 생략 시 mock JSON 기반 StaticAppsSource.
+   * 주의: useEffect 의존성이므로 매 렌더마다 새 인스턴스를 넘기면 무한 재조회가 발생한다.
+   * 모듈 상수 또는 useMemo/useState 로 안정화된 참조를 전달할 것.
+   */
   appsSource?: AppsSource
 }
 
