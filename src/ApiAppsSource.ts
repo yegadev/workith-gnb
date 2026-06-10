@@ -1,5 +1,7 @@
 import type { AppsSource, GnbApp } from './apps'
 
+export const DEFAULT_GNB_APPS_ENDPOINT = 'http://api.workith.com/api/gnb/apps'
+
 export interface ApiAppsSourceOptions {
   /** Called immediately before each request so hosts can provide a fresh access token. */
   getToken?: () => Promise<string | null> | string | null
@@ -9,7 +11,7 @@ export interface ApiAppsSourceOptions {
 
 export class ApiAppsSource implements AppsSource {
   constructor(
-    private readonly endpoint: string,
+    private readonly endpoint: string = DEFAULT_GNB_APPS_ENDPOINT,
     private readonly options: ApiAppsSourceOptions = {},
   ) {}
 

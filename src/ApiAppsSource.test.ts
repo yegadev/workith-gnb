@@ -1,7 +1,27 @@
 import { describe, expect, it, vi } from 'vitest'
-import { ApiAppsSource } from './ApiAppsSource'
+import { ApiAppsSource, DEFAULT_GNB_APPS_ENDPOINT } from './ApiAppsSource'
 
 describe('ApiAppsSource', () => {
+  it('uses api.workith.com as the default endpoint', async () => {
+    const apps = [
+      { id: 'mail', name: '메일', url: 'https://mail.workith.com', icon: 'mail', order: 1 },
+    ]
+    const fetchMock = vi.fn().mockResolvedValue({
+      ok: true,
+      json: vi.fn().mockResolvedValue(apps),
+    })
+    const source = new ApiAppsSource(undefined, { fetch: fetchMock as typeof fetch })
+
+    await expect(source.getApps()).resolves.toEqual(apps)
+
+    expect(DEFAULT_GNB_APPS_ENDPOINT).toBe('http://api.workith.com/api/gnb/apps')
+    expect(fetchMock).toHaveBeenCalledWith('http://api.workith.com/api/gnb/apps', {
+      headers: {
+        Accept: 'application/json',
+      },
+    })
+  })
+
   it('fetches apps with Accept and bearer token headers when getToken returns a token', async () => {
     const apps = [
       { id: 'mail', name: '메일', url: 'https://mail.example.com', icon: 'mail', order: 1 },
