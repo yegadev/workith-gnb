@@ -6,7 +6,7 @@ import SuperGnbRail from './SuperGnbRail'
 export interface GnbShellProps {
   /** 현재 앱 id (예: 'mail') — 강조 표시용 */
   currentAppId: string
-  /** 앱 목록 공급자 — 생략 시 mock JSON 기반 StaticAppsSource */
+  /** 앱 목록 공급자 — 생략 시 API 우선, mock fallback 기본 공급자 사용 */
   appsSource?: AppsSource
   /** 기존 호스트 앱 전체 */
   children: ReactNode

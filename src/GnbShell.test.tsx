@@ -1,11 +1,12 @@
 import { render, screen } from '@testing-library/react'
 import { describe, expect, it } from 'vitest'
+import { StaticAppsSource } from './apps'
 import GnbShell from './GnbShell'
 
 describe('GnbShell', () => {
   it('children 과 레일을 함께 렌더링한다', async () => {
     render(
-      <GnbShell currentAppId="mail">
+      <GnbShell currentAppId="mail" appsSource={new StaticAppsSource()}>
         <div>호스트 앱</div>
       </GnbShell>,
     )
@@ -13,9 +14,9 @@ describe('GnbShell', () => {
     expect(await screen.findByRole('navigation', { name: 'Workith 앱 전환' })).toBeInTheDocument()
   })
 
-  it('기본 appsSource(mock JSON)로 메일 앱을 현재 앱으로 강조한다', async () => {
+  it('주입된 appsSource 로 메일 앱을 현재 앱으로 강조한다', async () => {
     render(
-      <GnbShell currentAppId="mail">
+      <GnbShell currentAppId="mail" appsSource={new StaticAppsSource()}>
         <div>호스트 앱</div>
       </GnbShell>,
     )
