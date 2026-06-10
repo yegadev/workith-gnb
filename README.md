@@ -11,7 +11,7 @@ Workith super-GNB 좌측 앱 전환 레일 컴포넌트 패키지.
 
 ```bash
 # 원격 git 태그 설치 (권장 — prepare 스크립트가 설치 시 자동 빌드)
-pnpm add git+ssh://git@github.com/yegadev/workith-gnb.git#v0.2.0
+pnpm add git+ssh://git@github.com/yegadev/workith-gnb.git#v0.3.0
 
 # 같은 머신에 clone 되어 있는 경우 로컬 경로 설치도 가능 (개발용)
 pnpm add file:../../workith-gnb
