@@ -118,7 +118,7 @@ pnpm install --force   # 또는 node_modules/@workith/gnb 삭제 후 pnpm instal
 
 `.gitignore` 에 의해 `dist/` 는 저장소에 포함되지 않는다.
 
-- **원격 git 태그 설치**: `package.json` 의 `"prepare": "pnpm build"` 가 설치 시 자동으로
+- **원격 git 참조 설치**: `package.json` 의 `"prepare": "pnpm build"` 가 설치 시 자동으로
   빌드를 실행하므로 별도 조치가 필요 없다.
 - **로컬 `file:` 설치 / 직접 개발**: clone 직후에는 `dist/` 가 없으므로 반드시 빌드를 선행한다.
   (`pnpm install` 이 prepare 훅으로 빌드를 자동 실행하지만, 실패 시 수동으로 `pnpm build`)

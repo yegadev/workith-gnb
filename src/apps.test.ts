@@ -1,11 +1,6 @@
 import { afterEach, describe, expect, it, vi } from 'vitest'
 import { DEFAULT_GNB_APPS_ENDPOINT } from './ApiAppsSource'
-import {
-  defaultAppsSource,
-  FallbackAppsSource,
-  type GnbApp,
-  StaticAppsSource,
-} from './apps'
+import { defaultAppsSource, FallbackAppsSource, type GnbApp, StaticAppsSource } from './apps'
 
 const originalFetch = globalThis.fetch
 
