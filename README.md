@@ -2,8 +2,9 @@
 
 Workith super-GNB 좌측 앱 전환 레일 컴포넌트 패키지.
 
-앱 목록은 패키지에 내장된 mock JSON(`src/apps.mock.json`)을 기본값으로 사용하며,
-`StaticAppsSource`와 공통 API 기반 `ApiAppsSource`를 통해 런타임 주입도 지원한다.
+앱 목록은 기본적으로 `http://api.workith.com/api/gnb/apps`에서 가져온다.
+API 호출이 실패하면 패키지에 내장된 mock JSON(`src/apps.mock.json`)으로 fallback한다.
+`StaticAppsSource`, `FallbackAppsSource`, 공통 API 기반 `ApiAppsSource`를 통해 런타임 주입도 지원한다.
 
 ---
 
@@ -41,10 +42,15 @@ function App() {
 
 ## API apps source
 
+`GnbShell`의 `appsSource`를 생략하면 기본 공급자가 `http://api.workith.com/api/gnb/apps`를
+먼저 호출하고, 실패 시 내장 mock 목록으로 fallback한다.
+
+Bearer token이 필요한 호스트 앱은 `ApiAppsSource`를 명시 주입한다.
+
 ```tsx
 import { ApiAppsSource, GnbShell } from '@workith/gnb'
 
-const appsSource = new ApiAppsSource('https://api.wrkth.in/api/gnb/apps', {
+const appsSource = new ApiAppsSource('http://api.workith.com/api/gnb/apps', {
   getToken: () => keycloak.token ?? null,
 })
 
@@ -58,8 +64,15 @@ export function AppShell({ children }: { children: React.ReactNode }) {
 ```
 
 `getToken`은 요청 직전에 호출되며, 반환된 값은 `Authorization: Bearer <token>` 헤더로 전송된다.
-토큰이 없으면 Authorization 헤더를 생략한다. 같은 출처 프록시를 쓰는 앱에서는 endpoint를
-`/api/gnb/apps`로 지정할 수 있다.
+토큰이 없으면 Authorization 헤더를 생략한다.
+
+로컬 개발이나 테스트에서 mock 목록을 강제로 쓰려면 `StaticAppsSource`를 주입한다.
+
+```tsx
+import { GnbShell, StaticAppsSource } from '@workith/gnb'
+
+const appsSource = new StaticAppsSource()
+```
 
 `appsSource`는 모듈 상수나 `useMemo`로 안정적인 참조를 유지한다. `SuperGnbRail`은 source 참조에
 의존하는 effect에서 `getApps()`를 호출한다.
