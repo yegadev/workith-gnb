@@ -11,8 +11,8 @@ API 호출이 실패하면 패키지에 내장된 mock JSON(`src/apps.mock.json`
 ## 설치
 
 ```bash
-# API-first 기본 공급자 변경이 포함된 브랜치 설치 (prepare 스크립트가 설치 시 자동 빌드)
-pnpm add git+ssh://git@github.com/yegadev/workith-gnb.git#api-workith-menu-source
+# 원격 git 태그 설치 (prepare 스크립트가 설치 시 자동 빌드)
+pnpm add git+ssh://git@github.com/yegadev/workith-gnb.git#v0.4.0
 
 # 같은 머신에 clone 되어 있는 경우 로컬 경로 설치도 가능 (개발용)
 pnpm add file:../../workith-gnb

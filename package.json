@@ -1,6 +1,6 @@
 {
   "name": "@workith/gnb",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "description": "Workith 그룹웨어 공통 앱 전환 내비게이션 (super-GNB)",
   "type": "module",
   "main": "./dist/index.js",
