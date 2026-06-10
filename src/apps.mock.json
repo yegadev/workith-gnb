@@ -9,14 +9,14 @@
   {
     "id": "editor",
     "name": "에디터",
-    "url": "https://editor.workith.com",
+    "url": "https://editor.wrkth.in",
     "icon": "editor",
     "order": 2
   },
   {
     "id": "mail",
     "name": "메일",
-    "url": "https://api.mail.workith.com",
+    "url": "https://mail.workith.com",
     "icon": "mail",
     "order": 3
   },
@@ -26,5 +26,12 @@
     "url": "https://files.workith.com",
     "icon": "files",
     "order": 4
+  },
+  {
+    "id": "op",
+    "name": "예가비즈 OP",
+    "url": "https://yega-op.workith.com",
+    "icon": "op",
+    "order": 5
   }
 ]

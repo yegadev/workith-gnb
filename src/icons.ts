@@ -1,4 +1,5 @@
 import {
+  BarChart3,
   Clock,
   FileText,
   Folder,
@@ -19,6 +20,7 @@ const ICON_MAP: Readonly<Record<string, LucideIcon | undefined>> = {
   editor: FileText, // CRDT 에디터
   mail: Mail, // 메일
   files: Folder, // 파일
+  op: BarChart3, // 예가비즈 OP (경영지표)
   attendance: Clock, // (예정) 근태관리
   hr: Users, // (예정) HR
 }
