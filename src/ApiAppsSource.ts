@@ -1,6 +1,6 @@
 import type { AppsSource, GnbApp } from './apps'
 
-export const DEFAULT_GNB_APPS_ENDPOINT = 'http://api.workith.com/api/gnb/apps'
+export const DEFAULT_GNB_APPS_ENDPOINT = 'https://api.workith.com/api/gnb/apps'
 
 export interface ApiAppsSourceOptions {
   /** Called immediately before each request so hosts can provide a fresh access token. */

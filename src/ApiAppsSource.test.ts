@@ -14,8 +14,8 @@ describe('ApiAppsSource', () => {
 
     await expect(source.getApps()).resolves.toEqual(apps)
 
-    expect(DEFAULT_GNB_APPS_ENDPOINT).toBe('http://api.workith.com/api/gnb/apps')
-    expect(fetchMock).toHaveBeenCalledWith('http://api.workith.com/api/gnb/apps', {
+    expect(DEFAULT_GNB_APPS_ENDPOINT).toBe('https://api.workith.com/api/gnb/apps')
+    expect(fetchMock).toHaveBeenCalledWith('https://api.workith.com/api/gnb/apps', {
       headers: {
         Accept: 'application/json',
       },
