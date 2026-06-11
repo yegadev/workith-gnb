@@ -1,0 +1,5 @@
+# pnpm 10.26+/11 빌드 스크립트 허용 목록.
+# git 의존성으로 설치될 때 consumer 쪽 prepare(`pnpm install`)가 이 파일을 읽으므로,
+# tsup 이 쓰는 esbuild 의 postinstall 을 여기서 허용해야 설치가 성공한다.
+allowBuilds:
+  esbuild: true
