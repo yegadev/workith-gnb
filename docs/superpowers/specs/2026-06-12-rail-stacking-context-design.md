@@ -43,6 +43,9 @@ vite preview + playwright 스크린샷으로 재현·검증됐다
   z-index로 해결할 수 없으므로 `fixSiderbar={false}` 등 호스트 측 통합 방식은 그대로 유지된다.
 - sticky sider 등 호스트별 레이아웃 CSS.
 - nav의 `overflow-hidden`에 의한 AppIcon hover 툴팁 클리핑 가능성 — 별건으로 분리(범위 외).
+  단, 이 변경 이후 nav가 스태킹 컨텍스트를 가지므로 AppIcon 툴팁의 `wgnb-z-10`은
+  nav 내부에서만 유효해진다. 추후 툴팁 클리핑을 해결할 때는 `overflow-hidden` 제거만으로는
+  부족하고 Portal 분리가 필요하다는 의존 관계를 기록해 둔다 (Task 1 코드 리뷰 지적).
 
 ## 변경 범위
 
