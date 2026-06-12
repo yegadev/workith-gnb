@@ -2,14 +2,14 @@
   {
     "id": "groupware",
     "name": "그룹웨어",
-    "url": "https://groupware.workith.com",
+    "url": "https://admin.workith.com",
     "icon": "groupware",
     "order": 1
   },
   {
     "id": "editor",
     "name": "에디터",
-    "url": "https://editor.wrkth.in",
+    "url": "https://editor.workith.com",
     "icon": "editor",
     "order": 2
   },
@@ -28,10 +28,17 @@
     "order": 4
   },
   {
-    "id": "op",
+    "id": "yega-op",
     "name": "예가비즈 OP",
     "url": "https://yega-op.workith.com",
     "icon": "op",
     "order": 5
+  },
+  {
+    "id": "withlog",
+    "name": "Withlog",
+    "url": "https://withlog.workith.com",
+    "icon": "withlog",
+    "order": 6
   }
 ]

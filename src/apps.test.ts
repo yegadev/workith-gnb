@@ -27,9 +27,9 @@ describe('StaticAppsSource', () => {
     expect(apps.map((a) => a.id)).toContain('mail')
   })
 
-  it('mock 앱 목록에 op(예가비즈 OP)가 포함된다', async () => {
+  it('mock 앱 목록에 yega-op(예가비즈 OP)가 포함된다', async () => {
     const apps = await new StaticAppsSource().getApps()
-    const op = apps.find((a) => a.id === 'op')
+    const op = apps.find((a) => a.id === 'yega-op')
     expect(op).toMatchObject({
       name: '예가비즈 OP',
       url: 'https://yega-op.workith.com',
@@ -38,10 +38,19 @@ describe('StaticAppsSource', () => {
     })
   })
 
+  it('mock 앱 목록에 withlog 가 포함된다', async () => {
+    const apps = await new StaticAppsSource().getApps()
+    expect(apps.find((a) => a.id === 'withlog')).toMatchObject({
+      name: 'Withlog',
+      url: 'https://withlog.workith.com',
+      order: 6,
+    })
+  })
+
   it('mail/editor 앱은 실제 운영 도메인을 가리킨다', async () => {
     const apps = await new StaticAppsSource().getApps()
     expect(apps.find((a) => a.id === 'mail')?.url).toBe('https://mail.workith.com')
-    expect(apps.find((a) => a.id === 'editor')?.url).toBe('https://editor.wrkth.in')
+    expect(apps.find((a) => a.id === 'editor')?.url).toBe('https://editor.workith.com')
   })
 })
 
