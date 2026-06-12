@@ -30,6 +30,7 @@ interface SuperGnbRailProps {
  * - 접힘 56px ↔ 펼침 200px, 로고(W) 클릭으로 토글 (200ms transition)
  * - 모바일(<768px)에서는 숨김 — 1단계는 데스크톱 전용
  * - getApps 실패 시에도 레일은 렌더링하되 현재 앱만 표시 (fail-open)
+ * - positioned 저층 오버레이(예: ProLayout bg layer) 방어를 위해 relative z-10 스태킹 컨텍스트를 가짐
  */
 export default function SuperGnbRail({
   currentAppId,
@@ -74,7 +75,7 @@ export default function SuperGnbRail({
   return (
     <nav
       aria-label="Workith 앱 전환"
-      className={`wgnb-hidden wgnb-h-full wgnb-shrink-0 wgnb-flex-col wgnb-gap-1 wgnb-overflow-hidden wgnb-bg-slate-800 wgnb-px-2 wgnb-py-2.5 wgnb-transition-[width] wgnb-duration-200 wgnb-ease-out md:wgnb-flex ${
+      className={`wgnb-relative wgnb-z-10 wgnb-hidden wgnb-h-full wgnb-shrink-0 wgnb-flex-col wgnb-gap-1 wgnb-overflow-hidden wgnb-bg-slate-800 wgnb-px-2 wgnb-py-2.5 wgnb-transition-[width] wgnb-duration-200 wgnb-ease-out md:wgnb-flex ${
         expanded ? 'wgnb-w-[200px]' : 'wgnb-w-14'
       }`}
     >

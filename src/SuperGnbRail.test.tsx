@@ -52,4 +52,12 @@ describe('SuperGnbRail', () => {
     expect(links).toHaveLength(1)
     expect(links[0]).toHaveAttribute('aria-current', 'page')
   })
+
+  it('레일 nav 가 스태킹 컨텍스트 클래스를 가진다 (positioned 호스트 오버레이 방어)', () => {
+    render(<SuperGnbRail currentAppId="mail" appsSource={new StaticAppsSource(APPS)} />)
+    // ProLayout 의 .ant-pro-layout-bg-list(fixed z-0) 같은 저층 오버레이가
+    // static 레일을 덮는 회귀를 막는 가드 (스펙 2026-06-12 참조)
+    const nav = screen.getByRole('navigation', { name: 'Workith 앱 전환' })
+    expect(nav).toHaveClass('wgnb-relative', 'wgnb-z-10')
+  })
 })
