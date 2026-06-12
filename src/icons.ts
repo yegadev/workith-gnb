@@ -1,12 +1,11 @@
 import {
   BarChart3,
-  Clock,
+  CalendarClock,
   FileText,
   Folder,
   LayoutGrid,
   type LucideIcon,
   Mail,
-  MapPinPen,
   Settings,
   Users,
 } from 'lucide-react'
@@ -22,8 +21,7 @@ const ICON_MAP: Readonly<Record<string, LucideIcon | undefined>> = {
   mail: Mail, // 메일
   files: Folder, // 파일
   op: BarChart3, // 예가비즈 OP (경영지표)
-  withlog: MapPinPen, // Withlog (위치 기반 기록)
-  attendance: Clock, // (예정) 근태관리
+  withlog: CalendarClock, // Withlog (일정/기록)
   hr: Users, // (예정) HR
 }
 
