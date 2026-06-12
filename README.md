@@ -38,6 +38,10 @@ function App() {
 }
 ```
 
+레일 `<nav>`는 `position: relative; z-index: 10` 스태킹 컨텍스트를 기본으로 가진다.
+ProLayout의 배경 레이어처럼 낮은 z-index의 positioned 오버레이가 레일을 덮는 문제를 패키지가 방어한다.
+레일 위에 의도적으로 올릴 호스트 오버레이는 z-index를 10 초과로 두거나 portal을 사용한다.
+
 ---
 
 ## API apps source
