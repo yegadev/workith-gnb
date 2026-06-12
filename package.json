@@ -33,7 +33,7 @@
     "react-dom": ">=18"
   },
   "dependencies": {
-    "lucide-react": "^0.417.0"
+    "lucide-react": "^1.17.0"
   },
   "devDependencies": {
     "@biomejs/biome": "^2.4.16",

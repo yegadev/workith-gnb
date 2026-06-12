@@ -1,4 +1,4 @@
-import { BarChart3, Mail } from 'lucide-react'
+import { BarChart3, Mail, MapPinPen } from 'lucide-react'
 import { describe, expect, it } from 'vitest'
 import { DEFAULT_ICON, resolveIcon } from './icons'
 
@@ -9,6 +9,10 @@ describe('resolveIcon', () => {
 
   it('op 키는 BarChart3 아이콘으로 매핑된다', () => {
     expect(resolveIcon('op')).toBe(BarChart3)
+  })
+
+  it('withlog 키는 MapPinPen 아이콘으로 매핑된다', () => {
+    expect(resolveIcon('withlog')).toBe(MapPinPen)
   })
 
   it('미지의 키는 기본 아이콘으로 폴백한다', () => {
