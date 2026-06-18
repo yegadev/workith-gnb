@@ -1,5 +1,4 @@
 import {
-  Banknote,
   BarChart3,
   CalendarClock,
   FileText,
@@ -9,6 +8,7 @@ import {
   Mail,
   Settings,
   Users,
+  Wallet,
 } from 'lucide-react'
 
 /**
@@ -24,7 +24,7 @@ const ICON_MAP: Readonly<Record<string, LucideIcon | undefined>> = {
   op: BarChart3, // 예가비즈 OP (경영지표)
   withlog: CalendarClock, // Withlog (일정/기록)
   hr: Users, // (예정) HR
-  payroll: Banknote, // 급여
+  payroll: Wallet, // 급여
 }
 
 /** 미지의 키에 사용하는 기본 폴백 아이콘 */
