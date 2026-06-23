@@ -3,6 +3,7 @@ import {
   CalendarClock,
   FileText,
   Folder,
+  Image,
   LayoutGrid,
   type LucideIcon,
   Mail,
@@ -20,6 +21,7 @@ const ICON_MAP: Readonly<Record<string, LucideIcon | undefined>> = {
   groupware: Settings, // 그룹웨어 공통 (설정/사용자/권한)
   editor: FileText, // CRDT 에디터
   mail: Mail, // 메일
+  image: Image, // 이미지
   files: Folder, // 파일
   op: BarChart3, // 예가비즈 OP (경영지표)
   withlog: CalendarClock, // Withlog (일정/기록)
